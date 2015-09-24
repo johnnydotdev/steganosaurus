@@ -69,6 +69,7 @@ int main() {
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);
+    image.save("sloth.bmp");
 
     // Hide the message in the image.
     hide_message(image, secret_message);
@@ -76,7 +77,10 @@ int main() {
     // Save the modified image under a target name.
     image.save(target_name);
 
-    cout << "Decoded: " << decode_message(image) << endl;
+    // Open target image.
+    CImg<unsigned char> target_image(target_name);
+
+    cout << "Decoded: " << decode_message(target_image) << endl;
 
     return 0;
 }

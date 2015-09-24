@@ -1,8 +1,5 @@
 #include "steganosaurus.h"
 
-using namespace cimg_library;
-using namespace std;
-
 /*
  * Hides message in image.
  */
@@ -78,8 +75,6 @@ int main() {
 
     // Save the modified image under a target name.
     image.save(target_name);
-
-    cout << "MESSAGE LENGTH: " << secret_message.length() << endl;
 
     cout << "Decoded: " << decode_message(image) << endl;
 

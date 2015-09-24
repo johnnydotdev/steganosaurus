@@ -18,28 +18,17 @@ string get_user_input() {
 }
 
 /*
- * TODO: Replace this with stuff to get the file_name from user input.
+ * TODO: use user input for this
  */
-string get_file_name() {
-    return "sloth.jpg";
-}
-
-/*
- * TODO: Replace this with stuff to get the target_name from user input.
- */
-string get_target_name() {
-    return "drake.jpg";
-}
-
-string get_secrete_message() {
+string get_secret_message() {
     return "Drake looks like a sloth";
 }
 
 int main() {
     // Replace this later with command line argument.
-    string file_name   = get_file_name();
-    string target_name = get_target_name();
-    string secret_message = get_secrete_message();
+    const char *const file_name   = "sloth.jpg";
+    const char *const target_name = "target.jpg";
+    string secret_message         = get_secret_message();
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);

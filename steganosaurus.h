@@ -8,6 +8,8 @@ using namespace cimg_library;
 
 void hide_message(CImg<unsigned char> &image, string message);
 
+string decode_message(CImg<unsigned char> const &image);
+
 string get_user_input();
 
 string get_secret_message();

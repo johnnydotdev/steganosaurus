@@ -1,7 +1,4 @@
-#define cimg_use_jpeg
-#include "CImg.h"
-#include <iostream>
-#include <string>
+#include "steganosaurus.h"
 
 using namespace cimg_library;
 using namespace std;

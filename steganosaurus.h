@@ -2,6 +2,7 @@
 #include "CImg.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 using namespace cimg_library;

@@ -4,7 +4,7 @@ using namespace cimg_library;
 using namespace std;
 
 /*
- * 
+ * Hides message in image.
  */
 void hide_message(CImg<unsigned char> &image, string message) {
     // Note: RGB is stored as a planar structure, not interleaved.
@@ -24,12 +24,14 @@ void hide_message(CImg<unsigned char> &image, string message) {
             blue  = (int) (*image.data(i, j, 0, 2));
 
             if (it == it_end) {
+                cout << "returning when i is " << i << " and j is " << j << endl;
                 return;
             } else {
                 char temp_char = *it;
                 cout << "Adding " << temp_char << endl;
-                const unsigned char colors[] = { red, green, blue, (int) temp_char };
+                const unsigned char colors[] = { (int) temp_char, green, blue };
                 image.draw_point(i, j, colors);
+                cout << "char at i " << i << " and j " << j << " is " << *image.data(i, j, 0, 0) << endl;
                 it++;
             }
         }
@@ -38,7 +40,14 @@ void hide_message(CImg<unsigned char> &image, string message) {
 }
 
 string decode_message(CImg<unsigned char> const &image) {
-    return "";
+    // TODO: add EOL sequence.
+    stringstream ret;
+
+    for (int i = 0; i < 24; i++) {
+        ret << *image.data(0, i, 0, 0);
+    }
+    
+    return ret.str();
 }
 
 /*
@@ -63,23 +72,16 @@ int main() {
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);
-    const unsigned char colors[] = {255, 254, 253};
-    image.draw_point(50, 50, colors);
-
-//    // Test
-//    unsigned char * data_test = image.data(50, 50, 0, 1);
-//    int data_test_int = (int) (*data_test);
-//    cout << data_test_int << endl;
-//
-//    data_test = image.data(50, 50, 0, 2);
-//    data_test_int = (int) (*data_test);
-//    cout << data_test_int << endl;
 
     // Hide the message in the image.
     hide_message(image, secret_message);
 
     // Save the modified image under a target name.
     image.save(target_name);
+
+    cout << "MESSAGE LENGTH: " << secret_message.length() << endl;
+
+    cout << "Decoded: " << decode_message(image) << endl;
 
     return 0;
 }

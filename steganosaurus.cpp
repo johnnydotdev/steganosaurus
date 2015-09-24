@@ -63,13 +63,12 @@ string get_secret_message() {
 
 int main() {
     // Replace this later with command line argument.
-    const char *const file_name   = "sloth.jpg";
-    const char *const target_name = "target.jpg";
+    const char *const file_name   = "sloth.bmp";
+    const char *const target_name = "target.bmp";
     string secret_message         = get_secret_message();
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);
-    image.save("sloth.bmp");
 
     // Hide the message in the image.
     hide_message(image, secret_message);

@@ -4,14 +4,14 @@ using namespace cimg_library;
 using namespace std;
 
 void hide_message(CImg<unsigned char> &image, string message) {
-    
-    return image;
+    return;
 }
 
 /*
  * Helper method to get user input.
  */
 string get_user_input() {
+    return "Getting user input";
 }
 
 /*
@@ -29,6 +29,18 @@ int main() {
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);
+    const unsigned char colors[] = {255, 254, 253};
+    image.draw_point(50, 50, colors);
+
+    // Test
+    unsigned char * data_test = image.data(50, 50, 0, 1);
+    int data_test_int = (int) (*data_test);
+    cout << data_test_int << endl;
+
+    data_test = image.data(50, 50, 0, 2);
+    data_test_int = (int) (*data_test);
+    cout << data_test_int << endl;
+
 
     // Hide the message in the image.
     hide_message(image, secret_message);

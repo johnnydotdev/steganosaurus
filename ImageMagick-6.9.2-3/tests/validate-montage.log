@@ -1,0 +1,36 @@
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+validate: delegate library support not built-in `/Library/Fonts/Arial.ttf' (Freetype) @ warning/annotate.c/RenderFreetype/1558.
+validate: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/501.
+1..1
+Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2015 ImageMagick Studio LLC
+
+ImageMagick Validation Suite (Montage)
+
+validate montage command line program:
+  test 0: ... pass.
+  test 1: -frame 5... pass.
+  test 2: -geometry 13x19+10+5 -gravity Center... pass.
+  test 3: -label %f... pass.
+  test 4: -pointsize 10... pass.
+  test 5: -shadow... pass.
+  test 6: -tile 3x3... pass.
+  summary: 7 subtests; 7 passed; 0 failed.
+validation suite: 7 tests; 7 passed; 0 failed.
+ok
+PASS: tests/validate-montage.tap 1

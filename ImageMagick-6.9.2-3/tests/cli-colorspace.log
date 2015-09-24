@@ -1,0 +1,43 @@
+1..19
+Average "rose:" Color         146,89,80     sRGB(rose)
+Too Dark Color                73,26,21      sRGB(rose)->RGB result
+Too Light Color               199,160,152   RGB(rose)->sRGB result
+
+ok
+PASS: tests/cli-colorspace.tap 1
+ok
+PASS: tests/cli-colorspace.tap 2
+ok
+PASS: tests/cli-colorspace.tap 3
+ok
+PASS: tests/cli-colorspace.tap 4
+ok
+PASS: tests/cli-colorspace.tap 5
+ok
+PASS: tests/cli-colorspace.tap 6
+ok
+PASS: tests/cli-colorspace.tap 7
+ok
+PASS: tests/cli-colorspace.tap 8
+ok
+PASS: tests/cli-colorspace.tap 9
+ok
+PASS: tests/cli-colorspace.tap 10
+ok
+PASS: tests/cli-colorspace.tap 11
+ok
+PASS: tests/cli-colorspace.tap 12
+ok
+PASS: tests/cli-colorspace.tap 13
+ok
+PASS: tests/cli-colorspace.tap 14
+ok
+PASS: tests/cli-colorspace.tap 15
+ok
+PASS: tests/cli-colorspace.tap 16
+ok
+PASS: tests/cli-colorspace.tap 17
+ok
+PASS: tests/cli-colorspace.tap 18
+ok
+PASS: tests/cli-colorspace.tap 19

@@ -1,0 +1,70 @@
+1..1
+Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2015 ImageMagick Studio LLC
+
+ImageMagick Validation Suite (Composite)
+
+validate composite command line program:
+  test 0: ... pass.
+  test 1: -compose Add... pass.
+  test 2: -compose Atop... pass.
+  test 3: -compose Blend... pass.
+  test 4: -compose Bumpmap... pass.
+  test 5: -compose ChangeMask... pass.
+  test 6: -compose Clear... pass.
+  test 7: -compose ColorBurn... pass.
+  test 8: -compose ColorDodge... pass.
+  test 9: -compose Colorize... pass.
+  test 10: -compose CopyBlack... pass.
+  test 11: -compose CopyBlue... pass.
+  test 12: -compose CopyCyan... pass.
+  test 13: -compose CopyGreen... pass.
+  test 14: -compose Copy... pass.
+  test 15: -compose CopyMagenta... pass.
+  test 16: -compose CopyOpacity... pass.
+  test 17: -compose CopyRed... pass.
+  test 18: -compose CopyYellow... pass.
+  test 19: -compose Darken... pass.
+  test 20: -compose Divide... pass.
+  test 21: -compose Dst... pass.
+  test 22: -compose Difference... pass.
+  test 23: -compose Displace... pass.
+  test 24: -compose Dissolve... pass.
+  test 25: -compose DstAtop... pass.
+  test 26: -compose DstIn... pass.
+  test 27: -compose DstOut... pass.
+  test 28: -compose DstOver... pass.
+  test 29: -compose Dst... pass.
+  test 30: -compose Exclusion... pass.
+  test 31: -compose HardLight... pass.
+  test 32: -compose Hue... pass.
+  test 33: -compose In... pass.
+  test 34: -compose Lighten... pass.
+  test 35: -compose LinearLight... pass.
+  test 36: -compose Luminize... pass.
+  test 37: -compose Minus... pass.
+  test 38: -compose Modulate... pass.
+  test 39: -compose Multiply... pass.
+  test 40: -compose None... pass.
+  test 41: -compose Out... pass.
+  test 42: -compose Overlay... pass.
+  test 43: -compose Over... pass.
+  test 44: -compose Plus... pass.
+  test 45: -compose Replace... pass.
+  test 46: -compose Saturate... pass.
+  test 47: -compose Screen... pass.
+  test 48: -compose SoftLight... pass.
+  test 49: -compose Src... pass.
+  test 50: -compose SrcAtop... pass.
+  test 51: -compose SrcIn... pass.
+  test 52: -compose SrcOut... pass.
+  test 53: -compose SrcOver... pass.
+  test 54: -compose Src... pass.
+  test 55: -compose Subtract... pass.
+  test 56: -compose Threshold... pass.
+  test 57: -compose Xor... pass.
+  test 58: -geometry +35+65 -label Magick... pass.
+  summary: 59 subtests; 59 passed; 0 failed.
+validation suite: 59 tests; 59 passed; 0 failed.
+ok
+PASS: tests/validate-composite.tap 1

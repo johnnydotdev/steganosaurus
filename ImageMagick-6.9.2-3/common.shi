@@ -1,0 +1,21 @@
+# Test environment
+top_srcdir='/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3'
+top_builddir='/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3'
+
+set -a
+COMPARE="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/compare"
+COMPOSITE="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/composite"
+CONJURE="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/conjure"
+CONVERT="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/convert"
+DISPLAY="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/display"
+IDENTIFY="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/identify"
+MONTAGE="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities/montage" 
+VALIDATE="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/tests/validate"
+DRAWTEST="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/tests/drawtest"
+WANDTEST="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/tests/wandtest"
+LD_LIBRARY_PATH="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/magick/.libs:${LD_LIBRARY_PATH}"
+MAGICK_CODER_MODULE_PATH="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/coders"
+MAGICK_CONFIGURE_PATH="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/config:/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/config"
+MAGICK_FILTER_MODULE_PATH="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/filters"
+PATH="/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/utilities:/Users/johnnychang/Development/steganograsaurus/ImageMagick-6.9.2-3/tests:${PATH}"
+set +a

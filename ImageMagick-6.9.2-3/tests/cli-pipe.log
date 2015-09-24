@@ -1,0 +1,23 @@
+1..8
+ok
+PASS: tests/cli-pipe.tap 1
+-=>/var/tmp/magick-46054NW_jTn0FADoq MIFF 70x46 70x46+0+0 8-bit TrueColor sRGB 10KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 2
+-=>/var/tmp/magick-46083pKl5Q2Yxvmwg PPM 70x46 70x46+0+0 8-bit sRGB 9.67KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 3
+ok
+PASS: tests/cli-pipe.tap 4
+-=>/var/tmp/magick-46125qn6l40Yowrse MIFF 70x46 70x46+0+0 8-bit TrueColor sRGB 10KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 5
+-=>/var/tmp/magick-46153Y3eHpigwOJ7V PPM 70x46 70x46+0+0 8-bit sRGB 9.67KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 6
+-=>/var/tmp/magick-46181NSLRSV5rPB3b PPM 70x46 70x46+0+0 8-bit sRGB 9.67KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 7
+-=>/var/tmp/magick-46209SpfBxpHdT4fW MIFF 70x46 70x46+0+0 8-bit TrueColor sRGB 10KB 0.000u 0:00.000
+ok
+PASS: tests/cli-pipe.tap 8

@@ -1,0 +1,353 @@
+1..1
+Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2015 ImageMagick Studio LLC
+
+ImageMagick Validation Suite (Identify)
+
+validate identify command line program:
+  test 0: /var/tmp/magick-46847MfJGHQ5Twrbt MIFF 70x46 70x46+0+0 8-bit TrueColor sRGB 10KB 0.000u 0:00.000
+... pass.
+  test 1: -verboseImage: /var/tmp/magick-46847MfJGHQ5Twrbt
+  Format: MIFF (Magick Image File Format)
+  Class: DirectClass
+  Geometry: 70x46+0+0
+  Units: Undefined
+  Type: TrueColor
+  Base type: TrueColor
+  Endianess: Undefined
+  Colorspace: sRGB
+  Depth: 8-bit
+  Channel depth:
+    red: 8-bit
+    green: 8-bit
+    blue: 8-bit
+  Channel statistics:
+    Pixels: 3220
+    Red:
+      min: 35 (0.137255)
+      max: 255 (1)
+      mean: 145.712 (0.57142)
+      standard deviation: 69.2953 (0.271746)
+      kurtosis: -1.385
+      skewness: 0.14637
+      entropy: 0.966517
+    Green:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 89.2602 (0.35004)
+      standard deviation: 52.4698 (0.205764)
+      kurtosis: 2.63898
+      skewness: 1.81893
+      entropy: 0.863321
+    Blue:
+      min: 24 (0.0941176)
+      max: 255 (1)
+      mean: 80.4683 (0.315562)
+      standard deviation: 55.1114 (0.216123)
+      kurtosis: 3.01818
+      skewness: 1.9795
+      entropy: 0.847573
+  Image statistics:
+    Overall:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 105.147 (0.412341)
+      standard deviation: 59.4199 (0.233019)
+      kurtosis: 1.2733
+      skewness: 1.45983
+      entropy: 0.89247
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Background color: white
+  Border color: srgb(223,223,223)
+  Matte color: grey74
+  Transparent color: black
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 70x46+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: None
+  Orientation: Undefined
+  Properties:
+    date:create: 2015-09-23T23:24:27-05:00
+    date:modify: 2015-09-23T23:24:27-05:00
+    signature: a698f2fe0c6c31f83d19554a6ec02bac79c961dd9a87e7ed217752e75eb615d7
+  Artifacts:
+    filename: /var/tmp/magick-46847MfJGHQ5Twrbt
+    verbose: true
+  Tainted: False
+  Filesize: 10KB
+  Number pixels: 3.22K
+  Pixels per second: 3.22EB
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+... pass.
+  test 2: -features 1 -verboseImage: /var/tmp/magick-46847MfJGHQ5Twrbt
+  Format: MIFF (Magick Image File Format)
+  Class: DirectClass
+  Geometry: 70x46+0+0
+  Units: Undefined
+  Type: TrueColor
+  Base type: TrueColor
+  Endianess: Undefined
+  Colorspace: sRGB
+  Depth: 8-bit
+  Channel depth:
+    red: 8-bit
+    green: 8-bit
+    blue: 8-bit
+  Channel statistics:
+    Pixels: 3220
+    Red:
+      min: 35 (0.137255)
+      max: 255 (1)
+      mean: 145.712 (0.57142)
+      standard deviation: 69.2953 (0.271746)
+      kurtosis: -1.385
+      skewness: 0.14637
+      entropy: 0.966517
+    Green:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 89.2602 (0.35004)
+      standard deviation: 52.4698 (0.205764)
+      kurtosis: 2.63898
+      skewness: 1.81893
+      entropy: 0.863321
+    Blue:
+      min: 24 (0.0941176)
+      max: 255 (1)
+      mean: 80.4683 (0.315562)
+      standard deviation: 55.1114 (0.216123)
+      kurtosis: 3.01818
+      skewness: 1.9795
+      entropy: 0.847573
+  Image statistics:
+    Overall:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 105.147 (0.412341)
+      standard deviation: 59.4199 (0.233019)
+      kurtosis: 1.2733
+      skewness: 1.45983
+      entropy: 0.89247
+  Channel features (horizontal, vertical, left and right diagonals, average):
+    Red:
+      Angular Second Moment:
+        0.000827107, 0.000739128, 0.00062763, 0.000573642, 0.000691877
+      Contrast:
+        549.68, 543.533, 883.803, 1024.95, 750.491
+      Correlation:
+        0.941428, 0.941648, 0.902805, 0.887054, 0.918234
+      Sum of Squares Variance:
+        4867.25, 4929.71, 5011.07, 5006.08, 4953.53
+      Inverse Difference Moment:
+        0.194504, 0.177337, 0.148626, 0.131402, 0.162967
+      Sum Average:
+        223.129, 225.06, 227.814, 228.83, 226.208
+      Sum Variance:
+        67207.2, 67921.4, 68353.8, 68637, 68029.8
+      Sum Entropy:
+        2.58538, 2.59682, 2.63138, 2.63542, 2.61225
+      Entropy:
+        3.52617, 3.56371, 3.64209, 3.65619, 3.59704
+      Difference Variance:
+        1.1181e-06, 1.08456e-06, 9.27993e-07, 8.8581e-07, 1.00412e-06
+      Difference Entropy:
+        2.7933, 2.82557, 2.92899, 2.93884, 2.87168
+      Information Measure of Correlation 1:
+        -0.459974, -0.450659, -0.43391, -0.429567, -0.443527
+      Information Measure of Correlation 2:
+        0.945224, 0.94735, 0.951755, 0.950874, 0.948801
+      Maximum Correlation Coefficient:
+        nan, nan, nan, nan, nan
+    Green:
+      Angular Second Moment:
+        0.00124044, 0.00112205, 0.000989729, 0.00100368, 0.00108897
+      Contrast:
+        346.558, 372.01, 645.42, 583.413, 486.85
+      Correlation:
+        0.934223, 0.930531, 0.877558, 0.891452, 0.908441
+      Sum of Squares Variance:
+        2685.95, 2758.52, 2772.05, 2827.45, 2760.99
+      Inverse Difference Moment:
+        0.251058, 0.226429, 0.191671, 0.179446, 0.212151
+      Sum Average:
+        122.203, 124.029, 125.014, 126.638, 124.471
+      Sum Variance:
+        24736.9, 25321.9, 25112.8, 25784.3, 25239
+      Sum Entropy:
+        2.3267, 2.33928, 2.3686, 2.36931, 2.35097
+      Entropy:
+        3.2606, 3.3078, 3.40177, 3.39767, 3.34196
+      Difference Variance:
+        1.75611e-06, 1.63532e-06, 1.43429e-06, 1.43806e-06, 1.56594e-06
+      Difference Entropy:
+        3.17802, 3.19804, 3.31372, 3.30339, 3.24829
+      Information Measure of Correlation 1:
+        -0.407076, -0.394101, -0.3641, -0.371639, -0.384229
+      Information Measure of Correlation 2:
+        0.912268, 0.914216, 0.915615, 0.918874, 0.915243
+      Maximum Correlation Coefficient:
+        nan, nan, nan, nan, nan
+    Blue:
+      Angular Second Moment:
+        0.00125011, 0.00119552, 0.000994708, 0.00103962, 0.00111999
+      Contrast:
+        406.625, 423.596, 776.537, 673.632, 570.098
+      Correlation:
+        0.928564, 0.927197, 0.865589, 0.88502, 0.901592
+      Sum of Squares Variance:
+        2885.89, 2971.71, 2994.22, 3036.98, 2972.2
+      Inverse Difference Moment:
+        0.221466, 0.221253, 0.169423, 0.169756, 0.195474
+      Sum Average:
+        104.743, 105.652, 108.214, 108.846, 106.864
+      Sum Variance:
+        20984.9, 21217.5, 21658.8, 21969.8, 21457.8
+      Sum Entropy:
+        2.27275, 2.2851, 2.31874, 2.31518, 2.29794
+      Entropy:
+        3.26681, 3.29593, 3.39594, 3.39229, 3.33774
+      Difference Variance:
+        1.57063e-06, 1.617e-06, 1.38346e-06, 1.38561e-06, 1.48917e-06
+      Difference Entropy:
+        3.2106, 3.21065, 3.32733, 3.32827, 3.26921
+      Information Measure of Correlation 1:
+        -0.375323, -0.371814, -0.338616, -0.345219, -0.357743
+      Information Measure of Correlation 2:
+        0.896253, 0.902554, 0.902744, 0.905965, 0.901879
+      Maximum Correlation Coefficient:
+        nan, nan, nan, nan, nan
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Background color: white
+  Border color: srgb(223,223,223)
+  Matte color: grey74
+  Transparent color: black
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 70x46+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: None
+  Orientation: Undefined
+  Properties:
+    date:create: 2015-09-23T23:24:27-05:00
+    date:modify: 2015-09-23T23:24:27-05:00
+    signature: a698f2fe0c6c31f83d19554a6ec02bac79c961dd9a87e7ed217752e75eb615d7
+  Artifacts:
+    filename: /var/tmp/magick-46847MfJGHQ5Twrbt
+    identify:features: 1
+    verbose: true
+  Tainted: False
+  Filesize: 10KB
+  Number pixels: 3.22K
+  Pixels per second: 3.22EB
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+... pass.
+  test 3: -unique -verboseImage: /var/tmp/magick-46847MfJGHQ5Twrbt
+  Format: MIFF (Magick Image File Format)
+  Class: DirectClass
+  Geometry: 70x46+0+0
+  Units: Undefined
+  Type: TrueColor
+  Base type: TrueColor
+  Endianess: Undefined
+  Colorspace: sRGB
+  Depth: 8-bit
+  Channel depth:
+    red: 8-bit
+    green: 8-bit
+    blue: 8-bit
+  Channel statistics:
+    Pixels: 3220
+    Red:
+      min: 35 (0.137255)
+      max: 255 (1)
+      mean: 145.712 (0.57142)
+      standard deviation: 69.2953 (0.271746)
+      kurtosis: -1.385
+      skewness: 0.14637
+      entropy: 0.966517
+    Green:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 89.2602 (0.35004)
+      standard deviation: 52.4698 (0.205764)
+      kurtosis: 2.63898
+      skewness: 1.81893
+      entropy: 0.863321
+    Blue:
+      min: 24 (0.0941176)
+      max: 255 (1)
+      mean: 80.4683 (0.315562)
+      standard deviation: 55.1114 (0.216123)
+      kurtosis: 3.01818
+      skewness: 1.9795
+      entropy: 0.847573
+  Image statistics:
+    Overall:
+      min: 22 (0.0862745)
+      max: 255 (1)
+      mean: 105.147 (0.412341)
+      standard deviation: 59.4199 (0.233019)
+      kurtosis: 1.2733
+      skewness: 1.45983
+      entropy: 0.89247
+  Colors: 3019
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Background color: white
+  Border color: srgb(223,223,223)
+  Matte color: grey74
+  Transparent color: black
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 70x46+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: None
+  Orientation: Undefined
+  Properties:
+    date:create: 2015-09-23T23:24:27-05:00
+    date:modify: 2015-09-23T23:24:27-05:00
+    signature: a698f2fe0c6c31f83d19554a6ec02bac79c961dd9a87e7ed217752e75eb615d7
+  Artifacts:
+    filename: /var/tmp/magick-46847MfJGHQ5Twrbt
+    identify:unique-colors: true
+    verbose: true
+  Tainted: False
+  Filesize: 10KB
+  Number pixels: 3.22K
+  Pixels per second: 3.22EB
+  User time: 0.000u
+  Elapsed time: 0:01.000
+  Version: ImageMagick 6.9.2-3 Q16 x86_64 2015-09-23 http://www.imagemagick.org
+... pass.
+  summary: 4 subtests; 4 passed; 0 failed.
+validation suite: 4 tests; 4 passed; 0 failed.
+ok
+PASS: tests/validate-identify.tap 1

@@ -132,10 +132,15 @@ string get_user_input(string prompt) {
  * TODO: use user input for this
  */
 string get_secret_message() {
-    return get_user_input("Welcome! Please input your secret message below to be fed into Steganosaurus Rex");
+    return get_user_input("Please input your secret message below to be fed into Steganosaurus Rex");
+}
+
+string get_file_name() {
+    return get_user_input("File name?");
 }
 
 int main() {
+    cout << "Behold, Steganosaurus!" << endl;
     // Replace this later with command line argument.
     const char *const file_name   = "sloth.bmp";
     const char *const target_name = "target.bmp";
@@ -150,7 +155,7 @@ int main() {
     // Save the modified image under a target name.
     image.save(target_name);
 
-    cout << "DECODING...";
+    cout << "DECODING..." << endl;
 
     // Open target image.
     CImg<unsigned char> target_image(target_name);

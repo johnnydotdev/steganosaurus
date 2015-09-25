@@ -18,6 +18,7 @@ To do:
 - Find a workaround to const correctness of CImg file names so that Steganosaurus can take user input for file names
 
 To use:
+
 1. Run `make`.
 2. `./steganosaurus`
 

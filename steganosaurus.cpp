@@ -1,5 +1,7 @@
 #include "steganosaurus.h"
 
+const string END_SEQUENCE = "ENDENDEND";
+
 void set_rgb_bits(bitset<8> &red_bits, bitset<8> &green_bits, bitset<8> &blue_bits, bitset<8> const &letter_bits) {
     red_bits[0]   = letter_bits[0];
     red_bits[1]   = letter_bits[1];
@@ -58,12 +60,15 @@ unsigned char decode_letter(CImg<unsigned char> const &image, int x, int y) {
 /*
  * Hides message in image.
  */
-void hide_message(CImg<unsigned char> &image, string message) {
+void hide_message(CImg<unsigned char> &image, const string secret_message) {
     // Note: RGB is stored as a planar structure, not interleaved.
     int width = image.width();
     int height = image.height();
 
     unsigned char *red, *green, *blue;
+
+    // The secret message with the end sequence appended.
+    string message = secret_message + END_SEQUENCE;
 
     auto it     = begin(message);
     auto it_end = end(message);
@@ -91,12 +96,20 @@ string decode_message(CImg<unsigned char> const &image) {
     // TODO: add EOL sequence.
     stringstream ret;
 
-    for (int i = 0; i < 24; i++) {
-        const unsigned char * red = image.data(0, i, 0, 0);
-        const unsigned char * green = image.data(0, i, 0, 1);
-        const unsigned char * blue = image.data(0, i, 0, 2);
+    int width = image.width();
+    int height = image.height();
 
-        ret << decode_letter(image, 0, i);
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < height; j++) {
+            const unsigned char * red = image.data(0, i, 0, 0);
+            const unsigned char * green = image.data(0, i, 0, 1);
+            const unsigned char * blue = image.data(0, i, 0, 2);
+
+            ret << decode_letter(image, i, j);
+            if(ret.str().find(END_SEQUENCE) != string::npos) {
+                return ret.str();
+            }
+        }
     }
     
     return ret.str();

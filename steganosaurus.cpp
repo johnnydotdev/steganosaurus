@@ -142,8 +142,8 @@ string get_file_name() {
 int main() {
     cout << "Behold, Steganosaurus!" << endl;
     // Replace this later with command line argument.
-    const char *const file_name   = "sloth.bmp";
-    const char *const target_name = "target.bmp";
+    const char *const file_name   = "food/sloth.bmp";
+    const char *const target_name = "excretions/target.bmp";
     string secret_message         = get_secret_message();
 
     // Grab the image inside the current working directory with the specified filename.

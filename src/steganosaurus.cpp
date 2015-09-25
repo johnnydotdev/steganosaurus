@@ -2,7 +2,35 @@
 
 const string END_SEQUENCE = "ENDENDEND";
 
-void set_rgb_bits(bitset<8> &red_bits, bitset<8> &green_bits, bitset<8> &blue_bits, bitset<8> const &letter_bits) {
+Steganosaurus::Steganosaurus() {
+    
+}
+
+Steganosaurus::Steganosaurus(CImg<unsigned char> image) {
+    this->food = new CImg<unsigned char> (image);
+}
+
+Steganosaurus::Steganosaurus(const char *const file_name) {
+    this->food = new CImg<unsigned char> (file_name);
+}
+
+Steganosaurus::~Steganosaurus() {
+    delete this->food;
+}
+
+int Steganosaurus::width() {
+    return this->food->width();
+}
+
+int Steganosaurus::height() {
+    return this->food->height();
+}
+
+void Steganosaurus::excrete() {
+    this->food->save("excretions/target.bmp");
+}
+
+void Steganosaurus::set_rgb_bits(bitset<8> &red_bits, bitset<8> &green_bits, bitset<8> &blue_bits, bitset<8> const &letter_bits) {
     red_bits[0]   = letter_bits[0];
     red_bits[1]   = letter_bits[1];
     red_bits[2]   = letter_bits[2];
@@ -13,7 +41,7 @@ void set_rgb_bits(bitset<8> &red_bits, bitset<8> &green_bits, bitset<8> &blue_bi
     blue_bits[1]  = letter_bits[7];
 }
 
-void decode_rgb_bits(const bitset<8> &red_bits, const bitset<8> &green_bits, const bitset<8> &blue_bits, bitset<8> &letter_bits) {
+void Steganosaurus::decode_rgb_bits(const bitset<8> &red_bits, const bitset<8> &green_bits, const bitset<8> &blue_bits, bitset<8> &letter_bits) {
     letter_bits[0] = red_bits[0];
     letter_bits[1] = red_bits[1];
     letter_bits[2] = red_bits[2];
@@ -24,7 +52,7 @@ void decode_rgb_bits(const bitset<8> &red_bits, const bitset<8> &green_bits, con
     letter_bits[7] = blue_bits[1];
 }
 
-void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
+void Steganosaurus::hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
     unsigned char * red   = image.data(x, y, 0, 0);
     unsigned char * green = image.data(x, y, 0, 1);
     unsigned char * blue  = image.data(x, y, 0, 2);
@@ -41,7 +69,7 @@ void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
     *blue  = (char) blue_bits.to_ulong();
 }
 
-unsigned char decode_letter(CImg<unsigned char> const &image, int x, int y) {
+unsigned char Steganosaurus::decode_letter(CImg<unsigned char> const &image, int x, int y) {
     bitset<8> letter_bits;
 
     const unsigned char * red   = image.data(x, y, 0, 0);
@@ -60,10 +88,10 @@ unsigned char decode_letter(CImg<unsigned char> const &image, int x, int y) {
 /*
  * Hides message in image.
  */
-void hide_message(CImg<unsigned char> &image, const string secret_message) {
+void Steganosaurus::hide_message(const string secret_message) {
     // Note: RGB is stored as a planar structure, not interleaved.
-    int width = image.width();
-    int height = image.height();
+    int width = this->food->width();
+    int height = this->food->height();
 
     unsigned char *red, *green, *blue;
 
@@ -75,15 +103,15 @@ void hide_message(CImg<unsigned char> &image, const string secret_message) {
 
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
-            red   = image.data(i, j, 0, 0);
-            green = image.data(i, j, 0, 1);
-            blue  = image.data(i, j, 0, 2);
+            red   = this->food->data(i, j, 0, 0);
+            green = this->food->data(i, j, 0, 1);
+            blue  = this->food->data(i, j, 0, 2);
 
             if (it == it_end) {
                 return;
             } else {
                 char temp_char = *it;
-                hide_letter(image, i, j, temp_char);
+                hide_letter(*this->food, i, j, temp_char);
                 it++;
             }
         }
@@ -91,19 +119,19 @@ void hide_message(CImg<unsigned char> &image, const string secret_message) {
     return;
 }
 
-string decode_message(CImg<unsigned char> const &image) {
+string Steganosaurus::decode_message() {
     stringstream ret;
 
-    int width = image.width();
-    int height = image.height();
+    int width  = this->width();
+    int height = this->height();
 
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
-            const unsigned char * red   = image.data(0, i, 0, 0);
-            const unsigned char * green = image.data(0, i, 0, 1);
-            const unsigned char * blue  = image.data(0, i, 0, 2);
+            const unsigned char * red   = this->food->data(0, i, 0, 0);
+            const unsigned char * green = this->food->data(0, i, 0, 1);
+            const unsigned char * blue  = this->food->data(0, i, 0, 2);
 
-            ret << decode_letter(image, i, j);
+            ret << decode_letter(*this->food, i, j);
 
             // TODO: make this more efficient. how to search in stringstream? or maybe implement a basic FSM?
             if(ret.str().find(END_SEQUENCE) != string::npos) {
@@ -118,7 +146,7 @@ string decode_message(CImg<unsigned char> const &image) {
 /*
  * Helper method to get user input.
  */
-string get_user_input(string prompt) {
+string Steganosaurus::get_user_input(string prompt) {
     cout << prompt << endl;
 
     string ret;
@@ -130,44 +158,6 @@ string get_user_input(string prompt) {
 /*
  * TODO: use user input for this
  */
-string get_secret_message() {
+string Steganosaurus::get_secret_message() {
     return get_user_input("Please input your secret message below to be fed into Steganosaurus Rex");
-}
-
-string get_file_name() {
-    return get_user_input("File name?");
-}
-
-int main() {
-    cout << "Behold, Steganosaurus!" << endl;
-    // Replace this later with command line argument.
-    const char *const file_name   = "food/sloth.bmp";
-    const char *const target_name = "excretions/target.bmp";
-    string secret_message         = get_secret_message();
-
-    // Grab the image inside the current working directory with the specified filename.
-    CImg<unsigned char> image(file_name);
-
-    // Check that message is hide-able inside bmp.
-    int width  = image.width();
-    int height = image.height();
-    if (width * height < secret_message.length()) {
-        throw;
-     }
-
-
-    // Hide the message in the image.
-    hide_message(image, secret_message);
-
-    // Save the modified image under a target name.
-    image.save(target_name);
-
-    cout << "DECODING..." << endl;
-
-    // Open target image.
-    CImg<unsigned char> target_image(target_name);
-
-    cout << "Decoded message: " << decode_message(target_image) << endl;
-
-    return 0;
 }

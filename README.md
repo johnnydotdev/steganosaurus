@@ -19,6 +19,6 @@ To do:
 
 To use:
 1. Run `make`.
-- `./steganosaurus`
+2. `./steganosaurus`
 
 https://en.wikipedia.org/wiki/Security_through_obscurity courtesy of Topher Chung

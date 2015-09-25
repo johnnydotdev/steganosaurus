@@ -1,18 +1,6 @@
 #include "steganosaurus.h"
 
-
-
-void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
-    unsigned char * red   = image.data(x, y, 0, 0);
-    unsigned char * green = image.data(x, y, 0, 1);
-    unsigned char * blue  = image.data(x, y, 0, 2);
-
-    bitset<8> letter_bits (letter);
-
-    bitset<8> red_bits (*red);
-    bitset<8> green_bits (*green);
-    bitset<8> blue_bits (*blue);
-
+void set_rgb_bits(bitset<8> &red_bits, bitset<8> &green_bits, bitset<8> &blue_bits, bitset<8> const &letter_bits) {
     red_bits[0]   = letter_bits[0];
     red_bits[1]   = letter_bits[1];
     red_bits[2]   = letter_bits[2];
@@ -21,6 +9,30 @@ void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
     green_bits[2] = letter_bits[5];
     blue_bits[0]  = letter_bits[6];
     blue_bits[1]  = letter_bits[7];
+}
+
+void decode_rgb_bits(const bitset<8> &red_bits, const bitset<8> &green_bits, const bitset<8> &blue_bits, bitset<8> &letter_bits) {
+    letter_bits[0] = red_bits[0];
+    letter_bits[1] = red_bits[1];
+    letter_bits[2] = red_bits[2];
+    letter_bits[3] = green_bits[0];
+    letter_bits[4] = green_bits[1];
+    letter_bits[5] = green_bits[2];
+    letter_bits[6] = blue_bits[0];
+    letter_bits[7] = blue_bits[1];
+}
+
+void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
+    unsigned char * red   = image.data(x, y, 0, 0);
+    unsigned char * green = image.data(x, y, 0, 1);
+    unsigned char * blue  = image.data(x, y, 0, 2);
+
+    bitset<8> letter_bits (letter);
+    bitset<8> red_bits (*red);
+    bitset<8> green_bits (*green);
+    bitset<8> blue_bits (*blue);
+
+    set_rgb_bits(red_bits, green_bits, blue_bits, letter_bits);
 
     *red   = (char) red_bits.to_ulong();
     *green = (char) green_bits.to_ulong();
@@ -38,15 +50,8 @@ unsigned char decode_letter(CImg<unsigned char> const &image, int x, int y) {
     bitset<8> green_bits (*green);
     bitset<8> blue_bits (*blue);
 
-    letter_bits[0] = red_bits[0];
-    letter_bits[1] = red_bits[1];
-    letter_bits[2] = red_bits[2];
-    letter_bits[3] = green_bits[0];
-    letter_bits[4] = green_bits[1];
-    letter_bits[5] = green_bits[2];
-    letter_bits[6] = blue_bits[0];
-    letter_bits[7] = blue_bits[1];
-
+    decode_rgb_bits(red_bits, green_bits, blue_bits, letter_bits);
+    
     return (unsigned char) letter_bits.to_ulong();
 }
 

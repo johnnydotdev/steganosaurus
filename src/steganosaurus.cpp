@@ -73,7 +73,6 @@ void hide_message(CImg<unsigned char> &image, const string secret_message) {
     auto it     = begin(message);
     auto it_end = end(message);
 
-    // TODO: fix for loop later
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
             red   = image.data(i, j, 0, 0);
@@ -148,6 +147,14 @@ int main() {
 
     // Grab the image inside the current working directory with the specified filename.
     CImg<unsigned char> image(file_name);
+
+    // Check that message is hide-able inside bmp.
+    int width  = image.width();
+    int height = image.height();
+    if (width * height < secret_message.length()) {
+        throw;
+     }
+
 
     // Hide the message in the image.
     hide_message(image, secret_message);

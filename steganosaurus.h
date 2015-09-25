@@ -10,7 +10,7 @@ using namespace cimg_library;
 
 void hide_letter(CImg<unsigned char> &image, int x, int y, char letter);
 
-unsigned char decode_letter(const unsigned char * red, const unsigned char * green, const unsigned char * blue);
+unsigned char decode_letter(CImg<unsigned char> &image, int x, int y);
 
 void hide_message(CImg<unsigned char> &image, string message);
 

@@ -28,20 +28,30 @@ void hide_letter(CImg<unsigned char> &image, int x, int y, char letter) {
     *red   = (char) red_bits.to_ulong();
     *green = (char) green_bits.to_ulong();
     *blue  = (char) blue_bits.to_ulong();
-
     cout << "red after conversion: " << (int) *red << endl;
 }
 
-unsigned char decode_letter(const unsigned char * red, const unsigned char * green, const unsigned char * blue) {
-    unsigned char red_char   = (*red << 5);
-    unsigned char green_char = (*green << 5) >> 3;
-    unsigned char blue_char  = (*blue << 6) >> 6;
+unsigned char decode_letter(CImg<unsigned char> const &image, int x, int y) {
+    bitset<8> letter_bits;
 
-    cout << "decode letter r " << red_char << " g " << green_char << " b " << blue_char << endl;
+    const unsigned char * red   = image.data(x, y, 0, 0);
+    const unsigned char * green = image.data(x, y, 0, 1);
+    const unsigned char * blue  = image.data(x, y, 0, 2);
 
-    unsigned char ret = red_char & green_char & blue_char;
+    bitset<8> red_bits (*red);
+    bitset<8> green_bits (*green);
+    bitset<8> blue_bits (*blue);
 
-    return ret;
+    letter_bits[0] = red_bits[0];
+    letter_bits[1] = red_bits[1];
+    letter_bits[2] = red_bits[2];
+    letter_bits[3] = green_bits[0];
+    letter_bits[4] = green_bits[1];
+    letter_bits[5] = green_bits[2];
+    letter_bits[6] = blue_bits[0];
+    letter_bits[7] = blue_bits[1];
+
+    return (unsigned char) letter_bits.to_ulong();
 }
 
 /*
@@ -87,7 +97,7 @@ string decode_message(CImg<unsigned char> const &image) {
         const unsigned char * green = image.data(0, i, 0, 1);
         const unsigned char * blue = image.data(0, i, 0, 2);
 
-        ret << decode_letter(red, green, blue);
+        ret << decode_letter(image, 0, i);
     }
     
     return ret.str();

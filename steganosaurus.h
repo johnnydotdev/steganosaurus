@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <bitset>
 
 using namespace std;
 using namespace cimg_library;

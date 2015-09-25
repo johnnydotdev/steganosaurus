@@ -93,7 +93,6 @@ void hide_message(CImg<unsigned char> &image, const string secret_message) {
 }
 
 string decode_message(CImg<unsigned char> const &image) {
-    // TODO: add EOL sequence.
     stringstream ret;
 
     int width = image.width();
@@ -101,11 +100,13 @@ string decode_message(CImg<unsigned char> const &image) {
 
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
-            const unsigned char * red = image.data(0, i, 0, 0);
+            const unsigned char * red   = image.data(0, i, 0, 0);
             const unsigned char * green = image.data(0, i, 0, 1);
-            const unsigned char * blue = image.data(0, i, 0, 2);
+            const unsigned char * blue  = image.data(0, i, 0, 2);
 
             ret << decode_letter(image, i, j);
+
+            // TODO: make this more efficient. how to search in stringstream? or maybe implement a basic FSM?
             if(ret.str().find(END_SEQUENCE) != string::npos) {
                 return ret.str();
             }
@@ -118,15 +119,20 @@ string decode_message(CImg<unsigned char> const &image) {
 /*
  * Helper method to get user input.
  */
-string get_user_input() {
-    return "Getting user input";
+string get_user_input(string prompt) {
+    cout << prompt << endl;
+
+    string ret;
+    cin >> ret;
+
+    return ret;
 }
 
 /*
  * TODO: use user input for this
  */
 string get_secret_message() {
-    return "Drake looks like a sloth";
+    return get_user_input("Welcome! Please input your secret message below to be fed into Steganosaurus Rex");
 }
 
 int main() {
@@ -144,10 +150,12 @@ int main() {
     // Save the modified image under a target name.
     image.save(target_name);
 
+    cout << "DECODING...";
+
     // Open target image.
     CImg<unsigned char> target_image(target_name);
 
-    cout << "Decoded: " << decode_message(target_image) << endl;
+    cout << "Decoded message: " << decode_message(target_image) << endl;
 
     return 0;
 }
